@@ -6,8 +6,8 @@
 <meta name="color-scheme" content="light dark"/>
 <meta name="theme-color" content="#101312"/>
 <meta name="description" content="Bank your voice in the browser for free with Qwen3-TTS. Record 3 seconds, type to talk in your own voice. No account, no upload, no subscription."/>
-<link rel="icon" href="data:,"/>
-<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22VoiceBank%20Free%22%2C%22short_name%22%3A%22VoiceBank%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%230E6B5E%22%7D"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23101312'/%3E%3Crect x='4.8' y='11.5' width='3.2' height='9' fill='%23FFFFFF'/%3E%3Crect x='9.6' y='8.5' width='3.2' height='15' fill='%23FFFFFF'/%3E%3Crect x='14.4' y='5.5' width='3.2' height='21' fill='%23FFFFFF'/%3E%3Crect x='19.2' y='8.5' width='3.2' height='15' fill='%23FFFFFF'/%3E%3Crect x='24' y='11.5' width='3.2' height='9' fill='%23FFFFFF'/%3E%3C/svg%3E"/>
+<link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22VoiceBank%20Free%22%2C%22short_name%22%3A%22VoiceBank%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23ffffff%22%2C%22theme_color%22%3A%22%23101312%22%7D"/>
 <title>VoiceBank Free — Your voice, in your browser</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -248,11 +248,70 @@ footer{font-family:var(--font-m);font-size:12px;letter-spacing:.02em}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
 </style>
+<style>
+/* ===== Polish pass: Logo Modernism mark · mobile-first · enterprise finish ===== */
+:root{ --shadow:0 1px 2px rgba(16,19,18,.05),0 12px 32px -20px rgba(16,19,18,.18) }
+[id]{scroll-margin-top:84px}
+
+/* Logo — modernist geometry: five flat-ended bars (a voice waveform, peak at center)
+   set in a solid square vault. Pure black/white; the one teal accent lives in the wordmark. */
+.brand-mark{width:34px;height:34px;background:transparent;border-radius:0;flex:none}
+.brand-mark svg{display:block;width:34px;height:34px}
+.mark-box{fill:var(--ink)}
+.mark-bar{fill:var(--bg)}
+.brand-name{font-family:var(--font-d);font-weight:700;letter-spacing:-.02em}
+.brand-free{color:var(--teal);font-weight:700}
+.footer-mark{display:inline-flex;vertical-align:-4px;margin-right:8px}
+.footer-mark svg{display:block}
+
+/* Enterprise finish */
+.card,.hero-card{box-shadow:var(--shadow)}
+.hero h1{text-wrap:balance}
+.spec-strip b{font-variant-numeric:tabular-nums}
+.talk-area{box-shadow:inset 0 1px 2px rgba(16,19,18,.04)}
+
+/* Mobile action bar — the two jobs of the app, always within thumb reach */
+.mobile-bar{display:none}
+@media(max-width:760px){
+  .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb, var(--bg) 92%, transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
+  .mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:10px;text-decoration:none;font-family:var(--font-d);font-weight:600;font-size:15px}
+  .mobile-bar a.solid{background:var(--ink);color:var(--bg)}
+  .mobile-bar a.line{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
+  .wrap{padding-bottom:104px}
+  .toast{bottom:96px}
+}
+
+/* Mobile-first tightening */
+@media(max-width:640px){
+  .topbar-inner{padding:10px 14px;flex-wrap:nowrap}
+  .pills{flex-wrap:nowrap}
+  .pills .pill:not(:first-child){display:none}
+  .brand{font-size:16px;gap:9px}
+  .hero{padding:26px 0 0;gap:20px}
+  .hero h1{font-size:clamp(32px,9.2vw,40px);line-height:1.04}
+  .hero p.lead{font-size:16.5px;margin-top:12px}
+  .hero-card{padding:16px}
+  .spec-strip{margin-top:26px;padding:16px 2px;gap:14px}
+  .spec-strip b{font-size:21px}
+  .main-grid{margin-top:18px;gap:14px}
+  .engine-grid{gap:14px;margin-top:14px}
+  .card-head{padding:18px 18px 0}
+  .card-body{padding:16px 18px 20px}
+  .card-head h2{font-size:20px}
+  .talk-area{font-size:19px;min-height:128px;padding:14px}
+  .prompt-card{padding:16px}
+  .prompt-text{font-size:19px}
+  .steps{gap:10px}
+  .step{padding:16px}
+  .section-label{margin-top:28px}
+  footer{flex-direction:column;gap:8px}
+}
+</style>
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="5" width="2.2" height="6" rx="1.1" fill="currentColor"/><rect x="4.9" y="2.5" width="2.2" height="11" rx="1.1" fill="currentColor"/><rect x="8.8" y="4" width="2.2" height="8" rx="1.1" fill="currentColor"/><rect x="12.7" y="6" width="2.2" height="4" rx="1.1" fill="currentColor"/></svg></span> VoiceBank <span style="color:var(--teal)">Free</span></div>
+    <div class="brand"><span class="brand-mark" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 32 32" fill="none"><rect class="mark-box" width="32" height="32" rx="6"/><rect class="mark-bar" x="4.8" y="11.5" width="3.2" height="9"/><rect class="mark-bar" x="9.6" y="8.5" width="3.2" height="15"/><rect class="mark-bar" x="14.4" y="5.5" width="3.2" height="21"/><rect class="mark-bar" x="19.2" y="8.5" width="3.2" height="15"/><rect class="mark-bar" x="24" y="11.5" width="3.2" height="9"/></svg></span><span class="brand-name">VoiceBank <span class="brand-free">Free</span></span></div>
     <div class="pills" aria-label="Key facts">
       <span class="pill"><i></i> 100% in-browser</span>
       <span class="pill">$0 · No account</span>
@@ -452,10 +511,15 @@ footer{font-family:var(--font-m);font-size:12px;letter-spacing:.02em}
   <div class="note"><b>A note on honesty:</b> Loading a 0.6B model in a phone browser depends on WebGPU and device memory. On devices where Qwen can't load yet, this page automatically falls back — first to Chatterbox via the voxshot pattern, then to your device's system voice tuned with the pitch from your recordings — so you can <i>always</i> type and be heard today, and get the full Qwen clone on a WebGPU-capable browser (Chrome / Edge on desktop &amp; recent Android). The engine panel above shows live which path you're on.</div>
 
   <footer>
-    <span>VoiceBank Free · Layered Labs idea · Built for patients, not paywalls.</span>
+    <span><span class="footer-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect class="mark-box" width="32" height="32" rx="6"/><rect class="mark-bar" x="4.8" y="11.5" width="3.2" height="9"/><rect class="mark-bar" x="9.6" y="8.5" width="3.2" height="15"/><rect class="mark-bar" x="14.4" y="5.5" width="3.2" height="21"/><rect class="mark-bar" x="19.2" y="8.5" width="3.2" height="15"/><rect class="mark-bar" x="24" y="11.5" width="3.2" height="9"/></svg></span>VoiceBank Free · Layered Labs idea · Built for patients, not paywalls.</span>
     <span>Qwen3-TTS © Alibaba Qwen Team · Apache 2.0 · No audio leaves this browser.</span>
   </footer>
 </div>
+
+<nav class="mobile-bar" aria-label="Quick actions">
+  <a class="solid" href="#talk">Type to talk</a>
+  <a class="line" href="#bank">Bank my voice</a>
+</nav>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
